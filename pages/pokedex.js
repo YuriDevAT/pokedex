@@ -9,6 +9,7 @@ const pokedex = ({ pokemon }) => {
                 {pokemon.id}. {pokemon.name}
             </h1>
             <img className="mx-auto" src={pokemon.image} alt={pokemon.name} />
+            <div className="text-center">
             <p>
                 <span className="font-bold mr-2">Weight:</span>
                 {pokemon.weight}
@@ -20,12 +21,13 @@ const pokedex = ({ pokemon }) => {
             <h2 className="text-2xl mt-6 mb-2">Types</h2>
             {pokemon.types.map((type, index) => (
                 <p key={index}>{type.type.name}</p>
-            ))}
-            <p className="mt-10 text-center">
+            ))}            
+            <p className="mt-10">
                 <Link href="/">
-                    <a className="text-2xl underline">Home</a>
+                    <a className="text-2xl underline">Return To Pokedéx</a>
                 </Link>
-            </p>
+            </p>    
+            </div>        
         </Layout>
     );
 }

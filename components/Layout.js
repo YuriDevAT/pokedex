@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const Layout = ({ title, children }) => {
+const Layout = ({ title, children}) => {
     
     return (
         <div className="bg-gray-300">
