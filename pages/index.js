@@ -6,13 +6,13 @@ const Home = ({ pokedex }) => {
 
     return (
         <Layout title="Pokedex">
-            <div className="flex flex-col max-w-xs mx-auto">
+            <div className="flex flex-col w-60 mx-auto">
                 <h1 className="text-4xl mb-4 font-bold text-center">25 years of</h1>
                 <Image
                 src="/pokemon.png"
                 alt="pokemon-font"
-                width={350}
-                height={100}
+                width={200}
+                height={70}
                 />            
             </div>
             <h2 className="text-xl mt-8 font-semibold ml-7">Pokédex</h2>
@@ -20,7 +20,7 @@ const Home = ({ pokedex }) => {
                 {pokedex.map((pokemon, index) => (
                     <li key={index} className="w-40">
                         <Link href={`/pokemon?id=${index + 1}`}>
-                            <a className="border p-4 my-2 hover:shadow-md flex flex-col items-center text-sm bg-gray-200 rounded-md">
+                            <a className="border p-4 my-2 hover:shadow-md flex flex-col items-center text-sm rounded-md bg-gray-200">
                                 <img
                                     src={pokemon.image}
                                     alt={pokemon.name}

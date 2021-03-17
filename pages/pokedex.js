@@ -1,5 +1,6 @@
 import Layout from '../components/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const pokedex = ({ pokemon }) => {
 
@@ -22,9 +23,10 @@ const pokedex = ({ pokemon }) => {
             {pokemon.types.map((type, index) => (
                 <p key={index}>{type.type.name}</p>
             ))}            
-            <p className="mt-10">
+            <p className="mt-10 max-w-xs">
                 <Link href="/">
-                    <a className="text-2xl underline">Return To Pokedéx</a>
+                    <a className="text-2xl underline">Return To</a>
+                    <Image src='/pokedex.png' alt='pokedex-font' width={500} height={500} />
                 </Link>
             </p>    
             </div>        
