@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Layout from '../components/Layout';
 import Image from 'next/image';
+import { bgColor } from './function';
 
 const Home = ({ pokedex }) => {
 
@@ -20,16 +21,19 @@ const Home = ({ pokedex }) => {
                 {pokedex.map((pokemon, index) => (
                     <li key={index} className="w-40">
                         <Link href={`/pokedex?id=${index + 1}`}>
-                            <a className="border p-4 my-2 hover:shadow-md flex flex-col items-center text-sm rounded-md bg-gray-200">
+                            <a className="border p-4 my-2 hover:shadow-md flex flex-col items-center text-sm rounded-md bg-gray-200"
+                            styles={{backgroundColor: bgColor(pokemon)}}>
                                 <img
                                     src={pokemon.image}
                                     alt={pokemon.name}
                                     className="w-20 h-20 mr-3"
                                 />
-                                <span className="uppercase">
-                                    {index + 1}.
-                                </span>
+                                <p className="flex">
+                                  {index + 1}. 
+                                  <span className="uppercase ml-1">
                                     {pokemon.name}
+                                    </span>
+                                </p>
                             </a>
                         </Link>
                     </li>

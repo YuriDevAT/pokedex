@@ -11,26 +11,26 @@ const pokedex = ({ pokemon }) => {
             </h1>
             <img className="mx-auto" src={pokemon.image} alt={pokemon.name} />
             <div className="text-center">
-            <p>
-                <span className="font-bold mr-2">Weight:</span>
-                {pokemon.weight}
-            </p>
-            <p>
-                <span className="font-bold mr-2">Height:</span>
-                {pokemon.height}
-            </p>
-            <h2 className="text-2xl mt-6 mb-2">Types</h2>
-            {pokemon.types.map((type, index) => (
-                <p key={index}>{type.type.name}</p>
-            ))}            
-            <p className="mt-20 mx-auto max-h-full">
-                <Link href="/">
-                    <a>
-                    <p className="font-semibold">return to</p>
-                    <Image src='/pokedex.png' alt='pokedex-font' width={200} height={70} />
-                    </a>
-                </Link>
-            </p>    
+                <p>
+                    <span className="font-bold mr-2">Weight:</span>
+                    {pokemon.weight}
+                </p>
+                <p>
+                    <span className="font-bold mr-2">Height:</span>
+                    {pokemon.height}
+                </p>
+                <h2 className="text-2xl mt-6 mb-2">Type</h2>
+                {pokemon.types.map((type, index) => (
+                    <p key={index}>{type.type.name}</p>
+                ))}            
+                <div className="mt-8 mx-auto max-h-full">
+                    <Link href="/">
+                        <a>
+                        <p className="font-semibold">return to</p>
+                        <Image src='/pokedex.png' alt='pokedex-font' width={120} height={40} />
+                        </a>
+                    </Link>
+                </div>    
             </div>        
         </Layout>
     );
