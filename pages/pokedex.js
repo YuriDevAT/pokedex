@@ -26,7 +26,7 @@ const pokedex = ({ pokemon }) => {
             <p className="mt-10 max-w-xs">
                 <Link href="/">
                     <a className="text-2xl underline">Return To</a>
-                    <Image src='/pokedex.png' alt='pokedex-font' width={500} height={500} />
+                    <Image src='/pokedex.png' alt='pokedex-font' width={200} height={70} />
                 </Link>
             </p>    
             </div>        
