@@ -19,16 +19,17 @@ const Home = ({ pokedex }) => {
             <ul className="flex flex-wrap justify-around">
                 {pokedex.map((pokemon, index) => (
                     <li key={index} className="w-40">
-                        <Link href={`/pokemon?id=${index + 1}`}>
+                        <Link href={`/pokedex?id=${index + 1}`}>
                             <a className="border p-4 my-2 hover:shadow-md flex flex-col items-center text-sm rounded-md bg-gray-200">
                                 <img
                                     src={pokemon.image}
                                     alt={pokemon.name}
                                     className="w-20 h-20 mr-3"
                                 />
-                                <div>
-                                    {index + 1}. <span className="uppercase">{pokemon.name}</span>
-                                </div>
+                                <span className="uppercase">
+                                    {index + 1}.
+                                </span>
+                                    {pokemon.name}
                             </a>
                         </Link>
                     </li>
@@ -40,7 +41,7 @@ const Home = ({ pokedex }) => {
 
 export default Home;
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
     try {
         const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
         const { results } = await res.json();

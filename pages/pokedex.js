@@ -23,10 +23,12 @@ const pokedex = ({ pokemon }) => {
             {pokemon.types.map((type, index) => (
                 <p key={index}>{type.type.name}</p>
             ))}            
-            <p className="mt-10 max-w-xs">
+            <p className="mt-20 mx-auto max-h-full">
                 <Link href="/">
-                    <a className="text-2xl underline">Return To</a>
+                    <a>
+                    <p className="font-semibold">return to</p>
                     <Image src='/pokedex.png' alt='pokedex-font' width={200} height={70} />
+                    </a>
                 </Link>
             </p>    
             </div>        
