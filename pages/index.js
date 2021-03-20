@@ -22,7 +22,7 @@ const Home = ({ pokedex }) => {
                     <li key={index} className="w-40">
                         <Link href={`/pokedex?id=${index + 1}`}>
                             <a className="border p-4 my-2 hover:shadow-md flex flex-col items-center text-sm rounded-md bg-gray-200"
-                            styles={{backgroundColor: bgColor(pokemon)}}>
+                            style={{backgroundColor: bgColor(pokemon)}}>
                                 <img
                                     src={pokemon.image}
                                     alt={pokemon.name}
