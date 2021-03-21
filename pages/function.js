@@ -1,10 +1,14 @@
-export const bgColor = (pokemon) => {
-    // const type = pokemon.types.type.name;
+export const bgColor = () => {
+   
+    // const pokemon = fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
+    // const color = pokemon.types.map((type, index) => {
+    //     <p key={index}>{type.type.name}</p>
+    //  })         
+
     
-    // if (type === 'grass') {
+    // if (color === 'grass') {
     //     return 'green'
     // } else {
     //     return 'red'
     // }    
 }; 
-// Unfortunately, the problem seems to start in line 2 of the function const type = pokemon.types.type.name; pokemon.types is undefined. 
