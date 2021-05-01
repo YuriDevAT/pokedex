@@ -1,6 +1,6 @@
 # Description
 
-On the occasion of the 25th anniversary of Pokemon, I created an app related to Pokemon: a Pokedex using NextJS, and deployed with Vercel.
+On the occasion of the 25th anniversary of Pokemon, I created an app related to Pokemon: a Pokedex using NextJS and TailwindCSS, deployed with Vercel.
 
 ![pokedex](https://github.com/YuriDevAT/pokedex/blob/main/pokedex.PNG)
 
