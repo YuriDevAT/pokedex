@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import Image from 'next/image';
 import { useState } from 'react';
 
-const Home = ({ pokemonData }) => {
+const Home = ({ pokedex }) => {
 
     return (
         <Layout title="Pokedex">
@@ -18,7 +18,7 @@ const Home = ({ pokemonData }) => {
             </div>
             <h2 className="text-xl mt-8 font-semibold ml-7">Pokédex</h2>
             <ul className="flex flex-wrap justify-around">
-                {pokemonData.map((pokemon, index) => (
+                {pokedex.map((pokemon, index) => (
                     <li key={index} className="w-40">
                         <Link href={`/pokedex?id=${index + 1}`}>
                             <a className="border p-4 my-2 hover:shadow-md flex flex-col items-center text-sm rounded-md bg-gray-200">
@@ -44,52 +44,52 @@ const Home = ({ pokemonData }) => {
 
 export default Home;
 
-// export async function getStaticProps(context) {
-//     try {
-//         const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
-//         const { results } = await res.json();
-//         const pokedex = results.map((pokemon, index) => {
-//             const paddedId = ('00' + (index + 1)).slice(-3);
-//             const image = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${paddedId}.png`;
-//             return { ...pokemon, image };
-//         });
-//         return {
-//             props: { pokedex },
-//         };
-//     } catch (err) {
-//         console.error(err);
-//     };
-// }
-
-
-function getPokemonData() {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
-        .then((res) => res.json())
-        .then((pokemonData) => {
-            const results = pokemonData.results;
-            results.forEach((results) => {
-                    fetchPokemonData(results)
-            })
-            return {
-                props: { pokemonData },
-            }
-        })
-        .catch((e) => console.log(e))
+export async function getStaticProps(context) {
+    try {
+        const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
+        const { results } = await res.json();
+        const pokedex = results.map((pokemon, index) => {
+            const paddedId = ('00' + (index + 1)).slice(-3);
+            const image = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${paddedId}.png`;
+            return { ...pokemon, image };
+        });
+        return {
+            props: { pokedex },
+        };
+    } catch (err) {
+        console.error(err);
+    };
 }
 
-function fetchPokemonData(pokemon){
-    let url = pokemon.url 
-      fetch(url)
-      .then(response => response.json())
-      .then(function(pokeData){
-          const type = pokeData.types.type;
-          const name = pokeData.name;
-          const paddedId = ('00' + (index + 1)).slice(-3);
-          const image = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${paddedId}.png`;
-          return { ...name, image, type };      
-    });
-    return {
-        props: { pokeData },
-    }
-  }
+
+// function getPokemonData() {
+//     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+//         .then((res) => res.json())
+//         .then((pokemonData) => {
+//             const results = pokemonData.results;
+//             results.forEach((results) => {
+//                     fetchPokemonData(results)
+//             })
+//             return {
+//                 props: { pokemonData },
+//             }
+//         })
+//         .catch((e) => console.log(e))
+// }
+
+// function fetchPokemonData(pokemon){
+//     let url = pokemon.url 
+//       fetch(url)
+//       .then(response => response.json())
+//       .then(function(pokeData){
+//           const type = pokeData.types.type;
+//           const name = pokeData.name;
+//           const paddedId = ('00' + (index + 1)).slice(-3);
+//           const image = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${paddedId}.png`;
+//           return { ...name, image, type };      
+//     });
+//     return {
+//         props: { pokeData },
+//     }
+//   }
         // add pokeData to state here, that is what contains all the data you need
