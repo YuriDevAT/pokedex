@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Layout from '../components/Layout';
 import Image from 'next/image';
-import { useState } from 'react';
 
 const Home = ({ pokedex }) => {
 
@@ -60,36 +59,3 @@ export async function getStaticProps(context) {
         console.error(err);
     };
 }
-
-
-// function getPokemonData() {
-//     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
-//         .then((res) => res.json())
-//         .then((pokemonData) => {
-//             const results = pokemonData.results;
-//             results.forEach((results) => {
-//                     fetchPokemonData(results)
-//             })
-//             return {
-//                 props: { pokemonData },
-//             }
-//         })
-//         .catch((e) => console.log(e))
-// }
-
-// function fetchPokemonData(pokemon){
-//     let url = pokemon.url 
-//       fetch(url)
-//       .then(response => response.json())
-//       .then(function(pokeData){
-//           const type = pokeData.types.type;
-//           const name = pokeData.name;
-//           const paddedId = ('00' + (index + 1)).slice(-3);
-//           const image = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${paddedId}.png`;
-//           return { ...name, image, type };      
-//     });
-//     return {
-//         props: { pokeData },
-//     }
-//   }
-        // add pokeData to state here, that is what contains all the data you need
