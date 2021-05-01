@@ -1,5 +1,9 @@
-<!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/9844ed08-cbda-4ff0-9b4d-df7e1a43c865/deploy-status)](https://app.netlify.com/sites/25years-pokemon/deploys)
--->
+# Description
+
+On the occasion of the 25th anniversary of Pokemon, I created an app related to Pokemon: a Pokedex using NextJS, and deployed with Vercel.
+
+![pokedex](https://github.com/YuriDevAT/pokedex/blob/main/pokedex.PNG)
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
